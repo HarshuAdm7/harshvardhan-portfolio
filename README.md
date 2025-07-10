@@ -1,3 +1,3 @@
-# Harshvardhan's Portfolio
+# Harshvardhan's Updated Portfolio
 
-This is a personal portfolio website built with Next.js and hosted on Vercel.
+Now includes dark mode, animations, and project section!

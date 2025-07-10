@@ -1,9 +1,15 @@
-
 import Head from 'next/head'
 import Image from 'next/image'
+import { useState, useEffect } from 'react'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    document.body.className = darkMode ? styles.dark : styles.light;
+  }, [darkMode]);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -13,7 +19,12 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Image src="/profile.jpg" alt="Harshvardhan" width={150} height={150} className={styles.avatar} />
+        <div className={styles.toggle}>
+          <button onClick={() => setDarkMode(!darkMode)}>
+            Toggle {darkMode ? 'Light' : 'Dark'} Mode
+          </button>
+        </div>
+        <Image src="/profile.jpg" alt="Harshvardhan" width={160} height={160} className={styles.avatar} />
         <h1 className={styles.title}>Hi, I'm Harshvardhan Admuthe</h1>
         <p className={styles.subtitle}>AI/ML Learner | Creator | Vision Explorer</p>
 
@@ -23,21 +34,15 @@ export default function Home() {
             I’m an AI & Machine Learning undergraduate based in Bengaluru, India.
             I enjoy working at the intersection of technology, storytelling, and self-expression.
             My interests span computer vision, research, and building digital experiences that reflect who I am.
-            Outside of code, I’m an active collector, creator, and learner—driven by curiosity and a desire to build things that matter.
           </p>
         </section>
 
         <section className={styles.section}>
           <h2>Projects</h2>
-          <h3>Research on Object Detection in Still Images</h3>
-          <p>Ongoing project exploring image-based object detection using ML techniques.</p>
-        </section>
-
-        <section className={styles.section}>
-          <h2>Resume</h2>
-          <a href="https://www.overleaf.com/project/686f6c059ee094a738c4fb26" target="_blank" rel="noopener noreferrer">
-            View my resume on Overleaf
-          </a>
+          <div className={styles.card}>
+            <h3>Research: Object Detection in Still Images</h3>
+            <p>Ongoing exploration into image-based object recognition using ML & OpenCV.</p>
+          </div>
         </section>
 
         <section className={styles.section}>

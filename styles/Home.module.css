@@ -1,29 +1,49 @@
-
 .container {
   padding: 2rem;
   font-family: Arial, sans-serif;
   max-width: 800px;
   margin: auto;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-
 .main {
   text-align: center;
+  animation: fadeIn 1s ease-in;
 }
-
 .title {
   font-size: 2.5rem;
   margin: 1rem 0 0.5rem;
 }
-
 .subtitle {
   font-size: 1.2rem;
   margin-bottom: 2rem;
 }
-
 .section {
   margin: 2rem 0;
 }
-
 .avatar {
-  border-radius: 9999px;
+  border-radius: 50%;
+}
+.card {
+  background: #f3f3f3;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem auto;
+  max-width: 500px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.toggle {
+  text-align: right;
+  margin-bottom: 1rem;
+}
+.light {
+  background-color: #ffffff;
+  color: #1a1a1a;
+}
+.dark {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
