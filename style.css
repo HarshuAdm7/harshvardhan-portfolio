@@ -102,3 +102,15 @@ footer {
   object-fit: cover;
   border-radius: 8px;
 }
+
+
+/* Bigger logos and profile photo */
+.profile-photo {
+  width: 200px;
+  height: 200px;
+}
+
+.entry img {
+  height: 90px !important;
+  width: 90px !important;
+}
